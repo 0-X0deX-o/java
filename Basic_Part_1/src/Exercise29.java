@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercise20
+public class Exercise29
 {
     public static int hex_to_decimal(String s)
     {
@@ -20,26 +20,25 @@ public class Exercise20
     {
         String hexdec_num;
         int dec_num, i = 1, j;
-        int octal_num[] = new int[100];
-        Scanner in = new Scanner(System.in);
+        int bin_num[] = new int[100];
+        Scanner scan = new Scanner(System.in);
 
-        System.out.print("Input a hexadecimal number: ");
-        hexdec_num = in.nextLine();
+        System.out.print("Enter Hexadecimal Number : ");
+        hexdec_num = scan.nextLine();
 
         dec_num = hex_to_decimal(hexdec_num);
-        
 
         while(dec_num != 0)
         {
-            octal_num[i++] = dec_num % 8;
-            dec_num = dec_num / 8;
+            bin_num[i++] = dec_num % 2;
+            dec_num = dec_num / 2;
         }
 
-        System.out.print("Equivalent of octal number is: ");
-        for(j = i = 1; j > 0; j--)
+        System.out.print("Equivalent Binary Number is: ");
+        for (j = i = 1; j > 0; j--)
         {
-            System.out.print(octal_num[j]);
+            System.out.print(bin_num[j]);
         }
         System.out.print("\n");
-    }  
+    }
 }
